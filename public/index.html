@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sales Management System</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h1>Sales Management</h1>
+      <nav>
+        <ul>
+          <li><a href="#" onclick="showSection('dashboard')">Dashboard</a></li>
+          <li><a href="#" onclick="showSection('contacts')">Contacts</a></li>
+          <li><a href="#" onclick="showSection('activities')">Activities</a></li>
+          <li><a href="#" onclick="showSection('opportunities')">Opportunities</a></li>
+          <li><a href="#" onclick="showSection('performance')">Performance</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="main">
+      <header>
+        <h2 id="page-title">Dashboard</h2>
+      </header>
+      <div class="content">
+        <!-- Dashboard Section -->
+        <section id="dashboard" class="section active">
+          <h3>Welcome to the Dashboard</h3>
+          <p>Track your overall progress and performance here.</p>
+        </section>
+
+        <!-- Contacts Section -->
+        <section id="contacts" class="section">
+          <h3>Manage Contacts</h3>
+          <form id="contacts-form">
+            <input type="text" id="contact-name" placeholder="Name" required>
+            <input type="email" id="contact-email" placeholder="Email" required>
+            <input type="text" id="contact-phone" placeholder="Phone" required>
+            <button type="button" onclick="addContact()">Add Contact</button>
+          </form>
+          <ul id="contact-list"></ul>
+        </section>
+
+        <!-- Activities Section -->
+        <section id="activities" class="section">
+          <h3>Log Activities</h3>
+          <form id="activities-form">
+            <textarea id="activity-description" placeholder="Description" required></textarea>
+            <input type="date" id="activity-date" required>
+            <button type="button" onclick="logActivity()">Log Activity</button>
+          </form>
+          <ul id="activity-list"></ul>
+        </section>
+
+        <!-- Opportunities Section -->
+        <section id="opportunities" class="section">
+          <h3>Manage Opportunities</h3>
+          <form id="opportunities-form">
+            <input type="text" id="opportunity-title" placeholder="Title" required>
+            <input type="number" id="opportunity-value" placeholder="Deal Value" required>
+            <select id="opportunity-status">
+              <option value="Open">Open</option>
+              <option value="Won">Won</option>
+              <option value="Lost">Lost</option>
+            </select>
+            <button type="button" onclick="addOpportunity()">Add Opportunity</button>
+          </form>
+          <ul id="opportunity-list"></ul>
+        </section>
+
+        <!-- Performance Section -->
+        <section id="performance" class="section">
+          <h3>Performance Metrics</h3>
+          <p>View your sales targets and achievements here.</p>
+        </section>
+      </div>
+
+      <!-- Footer -->
+      <footer>
+        <p>&copy; 2023 Sales Management System | <a href="#dashboard" onclick="showSection('dashboard')">Home</a> | <a href="#contacts" onclick="showSection('contacts')">Contacts</a> | <a href="#activities" onclick="showSection('activities')">Activities</a></p>
+      </footer>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
